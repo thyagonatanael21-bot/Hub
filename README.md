@@ -1,31 +1,4 @@
--- ═══════════════════════════════════════════════════════════════
--- SERTANEJO HUB | MEC BR | v20 (Real Executor Fix)
--- by Lancenickel5 | Key: sertanejovip5
--- ═══════════════════════════════════════════════════════════════
-print("[SERTANEJO v20] Boot...")
 
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local UIS = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
-local TeleportService = game:GetService("TeleportService")
-local HttpService = game:GetService("HttpService")
-local Lighting = game:GetService("Lighting")
-local LocalPlayer = Players.LocalPlayer
-
-local HUB_NAME, HUB_TAG, CREATOR = "SERTANEJO HUB", "MEC BR", "Lancenickel5"
-local HUB_KEY, HUB_VER = "sertanejovip5", "v20"
-local DISCORD_CONTACT = "SEU_DISCORD_AQUI"
-
--- Proteções
-local PROT = { antikick=false, antireport=false, rejoin=true, antiafk=true, kicks=0 }
-pcall(function()
-    if hookfunction and LocalPlayer.Kick then
-        hookfunction(LocalPlayer.Kick, function(self, msg) PROT.kicks=PROT.kicks+1; return end)
-        PROT.antikick = true
-    end
-end)
-pcall(function()
     if getrawmetatable and setreadonly and newcclosure then
         local mt = getrawmetatable(game)
         local oldNC = mt.__namecall
